@@ -44,7 +44,7 @@ export default ({
     width: 18px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    background: rgb(189, 255, 0);
+    background: rgb(201, 255, 79);
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
@@ -56,13 +56,13 @@ export default ({
     justify-content: center;
     width: 80px;
     padding: 6px 3px 6px 3px;
-    background: gray;
+    background: rgb(176, 176, 176);
 
     .status-light-box {
       width: 100%;
       height: 10px;
       border-radius: 5px;
-      background: rgba(189, 255, 0);
+      background: rgb(201, 255, 79);
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     }
 
@@ -78,7 +78,7 @@ export default ({
     align-items: center;
     justify-content: center;
     width: 18px;
-    background: gray;
+    background: rgb(176, 176, 176);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
