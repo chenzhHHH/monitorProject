@@ -1,7 +1,9 @@
 <template>
   <div class="monitor-server-container">
-    <div class="left-info-box">
-      S
+    <div :class="['left-info-box', leftInfoClass]">
+      <div v-if="isShow" class="left-info-text-box">
+        S
+      </div>
     </div>
 
     <div class="middle-info-box">
@@ -20,11 +22,24 @@
 
 <script>
 
+import {computed, ref} from "vue";
+
 export default ({
   name: 'MonitorServer',
   components: {},
   setup() {
+    const isShow = ref(false);
 
+    const leftInfoClass = computed(() => {
+      return {
+        'normal-left-info-box': isShow.value,
+        'default-left-info-box': !isShow.value
+      };
+    });
+
+    return {
+      leftInfoClass
+    }
   }
 })
 </script>
@@ -35,7 +50,7 @@ export default ({
   min-height: 30px;
   max-width: 150px;
   border-radius: 3px;
-  font-size:  15px;
+  font-size: 15px;
 
   .left-info-box {
     display: flex;
@@ -44,9 +59,24 @@ export default ({
     width: 18px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    background: rgb(201, 255, 79);
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    .left-info-text-box {
+
+    }
+  }
+
+  .default-left-info-box {
+    background: rgb(176, 176, 176)
+  }
+
+  .normal-left-info-box {
+    background: rgb(201, 255, 79);
+  }
+
+  .warning-left-info-box {
+    background: rgb(247, 255, 0);
   }
 
   .middle-info-box {
