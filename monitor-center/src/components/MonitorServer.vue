@@ -11,7 +11,7 @@
         <div class="status-light-box"></div>
 
         <div class="info-name-box">
-          LOGREC1
+          SDFP1
         </div>
       </div>
 

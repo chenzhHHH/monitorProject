@@ -31,6 +31,6 @@ export default {
 
 <style lang="scss" scoped>
 .main-container {
-
+ background: grey;
 }
 </style>
