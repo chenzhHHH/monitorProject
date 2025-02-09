@@ -78,7 +78,7 @@ export default ({
     min-height: 30px;
     border-radius: 3px;
     font-size: 15px;
-    position: relative; // 添加相对定位以便绝对定位.float-left-bottom-info-box
+    position: relative;
 
     .left-info-box {
       display: flex;
