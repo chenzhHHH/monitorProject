@@ -18,6 +18,10 @@
       <div class="right-info-box">
 
       </div>
+
+      <div v-if="isShowEquipment" class="float-left-bottom-info-box">
+
+      </div>
     </div>
 
     <div class="monitor-server-bottom-box">
@@ -47,6 +51,7 @@ export default ({
   components: {},
   setup() {
     const isShow = ref(false);
+    const isShowEquipment = ref(false);
 
     const leftInfoClass = computed(() => {
       return {
@@ -57,6 +62,7 @@ export default ({
 
     return {
       isShow,
+      isShowEquipment,
       leftInfoClass
     }
   }
@@ -72,6 +78,7 @@ export default ({
     min-height: 30px;
     border-radius: 3px;
     font-size: 15px;
+    position: relative; // 添加相对定位以便绝对定位.float-left-bottom-info-box
 
     .left-info-box {
       display: flex;
@@ -132,6 +139,18 @@ export default ({
       background: rgb(176, 176, 176);
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
+    }
+
+    .float-left-bottom-info-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 30px 30px 0;
+      border-bottom-left-radius: 3px;
+      border-color: transparent transparent rgb(200, 200, 200) transparent;
     }
   }
 
