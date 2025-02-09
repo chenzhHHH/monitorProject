@@ -1,21 +1,39 @@
 <template>
   <div class="monitor-server-container">
-    <div :class="['left-info-box', leftInfoClass]">
-      <div v-if="isShow" class="left-info-text-box">
-        S
+    <div class="monitor-server-top-box">
+      <div :class="['left-info-box', leftInfoClass]">
+        <div v-if="isShow" class="left-info-text-box">
+          S
+        </div>
+      </div>
+
+      <div class="middle-info-box">
+        <div class="status-light-box"></div>
+
+        <div class="info-name-box">
+          LOGREC1
+        </div>
+      </div>
+
+      <div class="right-info-box">
+
       </div>
     </div>
 
-    <div class="middle-info-box">
-      <div class="status-light-box"></div>
+    <div class="monitor-server-bottom-box">
+      <div class="network-port-box">
+        <div class="per-network-port-box">
+          A
+        </div>
 
-      <div class="info-name-box">
-        LOGREC1
+        <div class="per-network-port-box">
+          B
+        </div>
+
+        <div class="per-network-port-box">
+          S
+        </div>
       </div>
-    </div>
-
-    <div class="right-info-box">
-
     </div>
   </div>
 </template>
@@ -38,6 +56,7 @@ export default ({
     });
 
     return {
+      isShow,
       leftInfoClass
     }
   }
@@ -46,71 +65,103 @@ export default ({
 
 <style lang="scss" scoped>
 .monitor-server-container {
-  display: flex;
-  min-height: 30px;
-  max-width: 150px;
-  border-radius: 3px;
-  font-size: 15px;
+  width: 116px;
 
-  .left-info-box {
+  .monitor-server-top-box {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    min-height: 30px;
+    border-radius: 3px;
+    font-size: 15px;
 
-    .left-info-text-box {
-
-    }
-  }
-
-  .default-left-info-box {
-    background: rgb(176, 176, 176)
-  }
-
-  .normal-left-info-box {
-    background: rgb(201, 255, 79);
-  }
-
-  .warning-left-info-box {
-    background: rgb(247, 255, 0);
-  }
-
-  .middle-info-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    padding: 6px 3px 6px 3px;
-    background: rgb(176, 176, 176);
-
-    .status-light-box {
-      width: 100%;
-      height: 10px;
-      border-radius: 5px;
-      background: rgb(201, 255, 79);
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    .info-name-box {
-      margin-top: 5px;
+    .left-info-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
       color: #fff;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+      .left-info-text-box {
+
+      }
+    }
+
+    .default-left-info-box {
+      background: rgb(176, 176, 176)
+    }
+
+    .normal-left-info-box {
+      background: rgb(196 247 82);
+    }
+
+    .warning-left-info-box {
+      background: rgb(247, 255, 0);
+    }
+
+    .middle-info-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      padding: 6px 3px 6px 3px;
+      background: rgb(176, 176, 176);
+
+      .status-light-box {
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;
+        background: rgb(196 247 82);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .info-name-box {
+        margin-top: 5px;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .right-info-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      background: rgb(176, 176, 176);
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
     }
   }
 
-  .right-info-box {
+  .monitor-server-bottom-box {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    width: 18px;
-    background: rgb(176, 176, 176);
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    margin-top: 5px;
+
+    .network-port-box {
+      display: flex;
+      flex-direction: row;
+
+      .per-network-port-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 12px;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        background: rgb(196 247 82);
+
+        &:not(:last-child) {
+          margin-right: 1px;
+        }
+      }
+    }
   }
 }
 </style>
